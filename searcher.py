@@ -31,7 +31,7 @@ def get_daum(query, collection):
 	return all_items
 
 def get_retrieve_function(url, collection):
-	return 'get_' + collection + '(' + url + ')'
+	return 'get_' + collection + '("' + url + '")'
 
 def get_socialpick():
 	params = {'n':200, 'apikey':key_daum, 'output':'json'}
@@ -59,7 +59,7 @@ def get_news(url):
     return all_items
 
 
-def get_images(url):
+def get_image(url):
     search_result = urllib.urlopen(url)
     data = search_result.read()
     soup = BeautifulSoup(data)
